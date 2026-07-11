@@ -1,0 +1,172 @@
+/* ============================================================
+   Why Low-Light Cameras Go Color Blind — project page
+   Theme adapted from the Vista4D project page (Futura/Inter, light,
+   blue accent, rounded dark buttons). Credit in the footer.
+   ============================================================ */
+
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent-color:  #0ea5e9;
+  --text-primary:   #1e293b;
+  --text-secondary: #475569;
+  --text-light:     #94a3b8;
+  --background-primary:   #ffffff;
+  --background-secondary: #f8fafc;
+  --border-color: #e2e8f0;
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 10px 20px -3px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.10);
+  --border-radius: 12px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-sans: 'Futura', 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html { scroll-behavior: smooth; background: var(--background-primary); }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  overflow-x: hidden;               /* guard against any incidental overflow */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--primary-color); transition: var(--transition); }
+a:hover { color: var(--primary-hover); }
+
+/* ---------------- hero ---------------- */
+.hero { background: var(--background-primary); }
+.hero-body { padding-top: clamp(3rem, 8vh, 6rem); padding-bottom: 2rem; }
+
+.publication-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: clamp(1.55rem, 6.4vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9rem;
+}
+.publication-title .accent {
+  background: linear-gradient(120deg, var(--accent-color), var(--primary-color));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  white-space: nowrap;
+}
+
+.publication-subtitle {
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+  margin-bottom: 1.4rem;
+}
+
+.publication-venue {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 1.7rem;
+}
+.venue-pill {
+  display: inline-block;
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  margin-right: 0.15rem;
+}
+.venue-sep { margin: 0 0.35rem; color: var(--text-light); }
+
+/* authors + affiliations */
+.authors {
+  font-size: 1.18rem;
+  line-height: 1.9;
+  margin-bottom: 0.6rem;
+}
+.author-block { display: inline-block; margin: 0 0.55rem; white-space: nowrap; }
+.author-block a { color: var(--text-primary); font-weight: 500; text-decoration: none; }
+.author-block a:hover { color: var(--primary-color); }
+.author-block sup { color: var(--text-light); font-weight: 500; }
+
+.affiliations {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.affiliations span { display: inline-block; margin: 0 0.55rem; }
+.affiliations sup { color: var(--text-light); }
+
+/* ---------------- link buttons ---------------- */
+.publication-links {
+  display: flex; flex-wrap: wrap;
+  gap: 0.75rem; justify-content: center;
+  margin-bottom: 1.6rem;
+}
+.button.is-dark {
+  background: var(--text-primary) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition) !important;
+  font-weight: 500;
+}
+.button.is-dark:hover {
+  background: var(--primary-color) !important;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.button .icon { margin-right: 0.15rem; }
+
+/* coming-soon note */
+.coming-soon {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--text-light);
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
+.cs-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 0 0 rgba(14,165,233,0.5);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(14,165,233,0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(14,165,233,0); }
+  100% { box-shadow: 0 0 0 0 rgba(14,165,233,0); }
+}
+
+/* ---------------- teaser ---------------- */
+.teaser-section { padding-top: 1rem; }
+.section-heading {
+  font-weight: 700; font-size: 1.6rem;
+  color: var(--text-primary); margin-bottom: 0.9rem;
+}
+.teaser {
+  font-size: 1.15rem; line-height: 1.75;
+  color: var(--text-secondary);
+}
+.teaser strong { color: var(--text-primary); }
+
+/* ---------------- footer ---------------- */
+.footer {
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 2.5rem 1.5rem 3rem;
+  margin-top: 2rem;
+}
+.footer .content { color: var(--text-light); font-size: 0.92rem; }
+.footer .license { font-size: 0.82rem; margin-top: 0.4rem; }
+
+@media (max-width: 640px) {
+  .author-block { margin: 0 0.4rem; }
+  .affiliations span { margin: 0 0.35rem; }
+  .publication-title .accent { white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-dot { animation: none; }
+  html { scroll-behavior: auto; }
+}
