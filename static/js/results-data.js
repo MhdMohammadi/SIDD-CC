@@ -1,4 +1,4 @@
-/* Auto-generated from root/tables/main_table.tex — do not edit by hand. */
+/* Auto-generated: PSNR from main_table.tex, SSIM from supp_ssim_results.tex. Do not edit by hand. */
 const QUANT_DATA = {
   "methods": [
     "Supervised U-Net",
@@ -83,7 +83,7 @@ const QUANT_DATA = {
           0.945,
           0.953,
           0.954,
-          0.941,
+          0.965,
           0.969,
           0.968,
           0.971,
@@ -196,7 +196,7 @@ const QUANT_DATA = {
           0.943,
           0.777,
           0.866,
-          0.901,
+          0.898,
           0.912,
           0.932,
           0.934,
@@ -224,7 +224,7 @@ const QUANT_DATA = {
           0.928,
           0.669,
           0.812,
-          0.867,
+          0.862,
           0.884,
           0.916,
           0.918,
