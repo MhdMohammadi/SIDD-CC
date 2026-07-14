@@ -59,7 +59,7 @@ a:hover { color: var(--primary-hover); }
 .publication-title {
   font-family: var(--font-sans);
   font-weight: 700;
-  color: var(--text-primary);
+  color: #000;                     /* main title line in black */
   font-size: clamp(1.55rem, 6.4vw, 2.75rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -67,7 +67,7 @@ a:hover { color: var(--primary-hover); }
   overflow-wrap: break-word;
 }
 .publication-title .accent {
-  color: var(--accent-color);   /* the part after the colon, in U of T secondary blue */
+  color: var(--primary-color);   /* the part after the colon, in U of T Blue (#1E3765) */
   font-weight: 600;
 }
 
