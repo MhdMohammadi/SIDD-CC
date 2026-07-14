@@ -218,6 +218,16 @@
       </p>
       <figure class="overview-fig">
         <img src="assets/overview.png" alt="Method overview: training and inference pipelines with black-level-error estimation and correction" />
+        <figcaption class="fig-caption">
+          <strong>Method overview.</strong> A first network &mdash; the <strong>BLE&nbsp;Predictor</strong> &mdash;
+          estimates the black-level error (&#8496;&#8242;<sub>bl</sub>) from a global view of the raw input; that
+          estimate corrects the black-level subtraction during preprocessing before a second network, the
+          <strong>Denoiser</strong>, cleans the image. <strong>Training</strong> (top): our noise synthesis
+          injects a known black-level error &#8496;<sub>bl</sub>, an <em>L1 loss</em> supervises the prediction
+          against it, and a second <em>L1 loss</em> supervises the denoised output.
+          <strong>Inference</strong> (bottom): the predictor estimates the error directly from the noisy input
+          &mdash; no reliance on the metadata black level.
+        </figcaption>
       </figure>
     </div>
   </section>

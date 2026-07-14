@@ -242,6 +242,9 @@ a:hover { color: var(--primary-hover); }
 /* method overview */
 .overview-fig { margin: 0.5rem auto 0; max-width: 1000px; }
 .overview-fig img { width: 100%; height: auto; display: block; }
+.overview-fig .fig-caption { text-align: left; margin-top: 0.9rem; line-height: 1.55; }
+.overview-fig .fig-caption strong { color: var(--text-secondary); }
+.overview-fig .fig-caption sub { font-size: 0.72em; }
 @media (max-width: 640px) {
   .pipe-tag { width: 100%; text-align: center; }
   .pipe-box, .pipe-out { font-size: 0.82rem; }
