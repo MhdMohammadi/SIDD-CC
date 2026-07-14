@@ -133,6 +133,80 @@
     </div>
   </section>
 
+  <!-- ===================== SECTION 1: SIDD-CC ===================== -->
+  <section class="section content-section">
+    <div class="container is-max-desktop">
+      <h2 class="section-heading">SIDD-CC: a color-corrected ground truth</h2>
+      <p class="section-lead">
+        SIDD builds its "clean" ground truth by averaging many noisy frames — but a subtle
+        mistake in the <strong>order of operations</strong> bakes a systematic
+        <strong class="hl-orange">color shift</strong> (a purple tint) into that ground truth.
+        We diagnose it and release <strong class="hl-green">SIDD-CC</strong>, a corrected version.
+      </p>
+
+      <div class="sidd-compare">
+        <div class="sidd-heads"><span>SIDD</span><span class="ours">SIDD-CC (ours)</span></div>
+        <div class="sidd-pair">
+          <img src="assets/sidd/sidd_chess.jpg" alt="SIDD ground truth (chess scene) with a purple tint" />
+          <img src="assets/sidd/siddcc_chess.jpg" alt="SIDD-CC corrected ground truth (chess scene)" />
+        </div>
+        <div class="sidd-pair">
+          <img src="assets/sidd/sidd_truck.jpg" alt="SIDD ground truth (toy trucks) with a purple tint" />
+          <img src="assets/sidd/siddcc_truck.jpg" alt="SIDD-CC corrected ground truth (toy trucks)" />
+        </div>
+        <p class="fig-caption">
+          Two SIDD scenes: the original ground truth carries a purple/magenta tint (left);
+          SIDD-CC restores the true colors (right).
+        </p>
+      </div>
+
+      <h3 class="subsection-heading">Why: the order of operations</h3>
+      <p class="section-lead">
+        In each raw frame, a dark pixel's noise dips <em>below</em> the sensor's black level.
+        SIDD subtracts the black level and <strong>clips</strong> every frame <em>before</em>
+        averaging — clipping discards those sub-zero values, so the average is pulled
+        <strong class="hl-orange">upward</strong>. Since the black level differs per color
+        channel, this <strong class="hl-orange">mean shift</strong> shows up as a color cast.
+        Averaging <em>first</em>, then clipping, preserves the true mean.
+      </p>
+      <div class="pipeline">
+        <div class="pipe-row">
+          <span class="pipe-tag">SIDD</span>
+          <span class="pipe-box">Noisy frames</span><span class="pipe-arrow">→</span>
+          <span class="pipe-box">Subtract black level &amp; clip</span><span class="pipe-arrow">→</span>
+          <span class="pipe-box">Average</span><span class="pipe-arrow">⟹</span>
+          <span class="pipe-out bad">mean shift · purple tint</span>
+        </div>
+        <div class="pipe-row">
+          <span class="pipe-tag ours">SIDD-CC</span>
+          <span class="pipe-box">Noisy frames</span><span class="pipe-arrow">→</span>
+          <span class="pipe-box">Average</span><span class="pipe-arrow">→</span>
+          <span class="pipe-box">Subtract black level &amp; clip</span><span class="pipe-arrow">⟹</span>
+          <span class="pipe-out good">true colors</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 2: BLACK-LEVEL ERROR ESTIMATION ===================== -->
+  <section class="section content-section alt">
+    <div class="container is-max-desktop">
+      <h2 class="section-heading">Black-level error estimation</h2>
+      <p class="section-lead">
+        The same problem returns at inference: the black level a camera reports in its
+        metadata is often inaccurate, so a denoiser trained under the zero-mean assumption
+        bakes a <strong class="hl-orange">color shift</strong> into its output. A local U-Net
+        cannot correct a <em>global</em> offset — so we reuse a single U-Net twice: once to
+        <strong>estimate the black-level error</strong> from a global view of the noisy input,
+        once to denoise. An auxiliary loss supervises the estimate end-to-end, so the
+        correction is learned rather than assumed.
+      </p>
+      <figure class="overview-fig">
+        <img src="assets/overview.png" alt="Method overview: training and inference pipelines with black-level-error estimation and correction" />
+      </figure>
+    </div>
+  </section>
+
   <!-- ===================== AFFILIATION LOGOS ===================== -->
   <section class="section logos-section">
     <div class="container">
