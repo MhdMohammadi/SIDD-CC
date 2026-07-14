@@ -5,10 +5,10 @@
    ============================================================ */
 
 :root {
-  --primary-color: #2563eb;
-  --primary-hover: #1d4ed8;
-  --accent-color:  #0ea5e9;
-  --text-primary:   #1e293b;
+  --primary-color: #1E3765;   /* U of T Blue (Pantone 655) */
+  --primary-hover: #007FA3;   /* U of T secondary blue (Pantone 633) */
+  --accent-color:  #007FA3;   /* accent = U of T secondary blue */
+  --text-primary:   #1E3765;  /* headings / title / buttons (U of T Blue) */
   --text-secondary: #475569;
   --text-light:     #94a3b8;
   --background-primary:   #ffffff;
@@ -35,6 +35,11 @@ body {
 a { color: var(--primary-color); transition: var(--transition); }
 a:hover { color: var(--primary-hover); }
 
+/* neutralise Bulma's .columns negative side-margins (they overflow the viewport
+   on narrow screens and clip centered content on the right) */
+.columns { margin-left: 0; margin-right: 0; max-width: 100%; }
+.column { min-width: 0; }   /* let flex column shrink instead of overflowing */
+
 /* ---------------- hero ---------------- */
 .hero { background: var(--background-primary); }
 .hero-body { padding-top: clamp(3rem, 8vh, 6rem); padding-bottom: 2rem; }
@@ -47,11 +52,11 @@ a:hover { color: var(--primary-hover); }
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 0.9rem;
+  overflow-wrap: break-word;
 }
 .publication-title .accent {
-  background: linear-gradient(120deg, var(--accent-color), var(--primary-color));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  white-space: nowrap;
+  color: var(--accent-color);   /* the part after the colon, in U of T secondary blue */
+  font-weight: 600;
 }
 
 .publication-subtitle {
@@ -113,9 +118,21 @@ a:hover { color: var(--primary-hover); }
   font-weight: 500;
 }
 .button.is-dark:hover {
-  background: var(--primary-color) !important;
+  background: var(--accent-color) !important;
   box-shadow: var(--shadow-lg);
   transform: translateY(-1px);
+}
+/* not-yet-available links: shown but clearly inactive */
+.button.is-dark.soon {
+  background: transparent !important;
+  color: var(--text-light) !important;
+  border: 1px dashed var(--border-color) !important;
+  box-shadow: none !important;
+  cursor: default; font-weight: 500;
+}
+.button.is-dark.soon:hover {
+  background: transparent !important; transform: none;
+  box-shadow: none; color: var(--text-light) !important;
 }
 .button .icon { margin-right: 0.15rem; }
 
@@ -129,13 +146,13 @@ a:hover { color: var(--primary-hover); }
 .cs-dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--accent-color);
-  box-shadow: 0 0 0 0 rgba(14,165,233,0.5);
+  box-shadow: 0 0 0 0 rgba(0,127,163,0.5);
   animation: pulse 2.4s ease-out infinite;
 }
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(14,165,233,0.5); }
-  70%  { box-shadow: 0 0 0 8px rgba(14,165,233,0); }
-  100% { box-shadow: 0 0 0 0 rgba(14,165,233,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(0,127,163,0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(0,127,163,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,127,163,0); }
 }
 
 /* ---------------- teaser ---------------- */
@@ -161,6 +178,9 @@ a:hover { color: var(--primary-hover); }
 .footer .license { font-size: 0.82rem; margin-top: 0.4rem; }
 
 @media (max-width: 640px) {
+  .publication-title { font-size: clamp(1.35rem, 5.8vw, 2rem); }
+  .authors { font-size: 1rem; }
+  .publication-venue { font-size: 0.95rem; }
   .author-block { margin: 0 0.4rem; }
   .affiliations span { margin: 0 0.35rem; }
   .publication-title .accent { white-space: normal; }
