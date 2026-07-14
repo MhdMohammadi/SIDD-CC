@@ -86,7 +86,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a class="external-link button is-medium is-rounded is-dark soon" title="coming soon" aria-label="Poster (coming soon)">
+                <a href="assets/poster.pdf" target="_blank" rel="noopener" class="external-link button is-medium is-rounded is-dark" aria-label="Poster">
                   <span class="icon"><i class="fas fa-image"></i></span>
                   <span>Poster</span>
                 </a>
@@ -100,7 +100,7 @@
             </div>
 
             <div class="coming-soon">
-              <span class="cs-dot"></span> Code, dataset, poster &amp; Twitter thread &mdash; coming soon
+              <span class="cs-dot"></span> Code, dataset &amp; Twitter thread &mdash; coming soon
             </div>
 
           </div>
@@ -116,19 +116,31 @@
         <div class="column is-four-fifths has-text-centered">
           <h2 class="section-heading">TL;DR</h2>
           <p class="teaser">
-            In low light, the black level a camera reports in its metadata may be
-            inaccurate, and this <strong>black-level error</strong> violates the zero-mean
-            assumption behind raw denoising. As a result, the denoiser's output suffers from
-            a <strong>color shift</strong>. We model the black-level error, supervise its
-            estimation with a two-pass network, and erase the bias, setting a new state of
-            the art among blind raw denoising methods.
-          </p>
-          <p class="teaser teaser-2">
-            We also discover a systematic color shift in the SIDD ground-truth images
+            We discover a systematic color shift in the SIDD ground-truth images
             (the purple tint). We propose a solution and introduce <strong>SIDD-CC</strong>,
             the color-corrected version of the dataset.
           </p>
+          <p class="teaser teaser-2">
+            We also find that, in low light, the black level a camera reports in its
+            metadata may be inaccurate, and this <strong>black-level error</strong> violates
+            the zero-mean assumption behind raw denoising. As a result, the denoiser's output
+            suffers from a <strong>color shift</strong>. We model the black-level error,
+            supervise its estimation with a two-pass network, and erase the bias, setting a
+            new state of the art among blind raw denoising methods.
+          </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AFFILIATION LOGOS ===================== -->
+  <section class="section logos-section">
+    <div class="container">
+      <div class="logo-row">
+        <img src="assets/logos/uoft.svg" alt="University of Toronto" />
+        <img src="assets/logos/vector.png" alt="Vector Institute" />
+        <img src="assets/logos/samsung.png" alt="Samsung AI Center Toronto" />
+        <img src="assets/logos/york.png" alt="York University" />
       </div>
     </div>
   </section>
@@ -143,11 +155,6 @@
           project page, which builds on the
           <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a>
           template. Thanks to both.
-        </p>
-        <p class="license">
-          This website is licensed under a
-          <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
-            Creative Commons Attribution-ShareAlike 4.0 International License</a>.
         </p>
       </div>
     </div>
