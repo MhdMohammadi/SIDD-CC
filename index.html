@@ -116,11 +116,17 @@
         <div class="column is-four-fifths has-text-centered">
           <h2 class="section-heading">TL;DR</h2>
           <p class="teaser">
-            In low light, the black level a camera reports in its metadata is
-            <em>wrong</em> &mdash; and this <strong>black-level error</strong> leaves a color
-            bias that no denoiser can remove. We model it, supervise its estimation with a
-            two-pass network, and erase the bias, setting a new state of the art among blind
-            methods. We also release <strong>SIDD-CC</strong>, a color-corrected ground truth.
+            In low light, the black level a camera reports in its metadata may be
+            inaccurate, and this <strong>black-level error</strong> violates the zero-mean
+            assumption behind raw denoising. As a result, the denoiser's output suffers from
+            a <strong>color shift</strong>. We model the black-level error, supervise its
+            estimation with a two-pass network, and erase the bias, setting a new state of
+            the art among blind raw denoising methods.
+          </p>
+          <p class="teaser teaser-2">
+            We also discover a systematic color shift in the SIDD ground-truth images
+            (the purple tint). We propose a solution and introduce <strong>SIDD-CC</strong>,
+            the color-corrected version of the dataset.
           </p>
         </div>
       </div>

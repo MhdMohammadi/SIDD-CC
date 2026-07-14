@@ -166,6 +166,7 @@ a:hover { color: var(--primary-hover); }
   color: var(--text-secondary);
 }
 .teaser strong { color: var(--text-primary); }
+.teaser-2 { margin-top: 1.1rem; }
 
 /* ---------------- footer ---------------- */
 .footer {
