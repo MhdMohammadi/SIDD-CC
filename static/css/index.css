@@ -303,6 +303,16 @@ a:hover { color: var(--primary-hover); }
   .q-row { grid-template-columns: 110px 1fr auto; }
 }
 
+/* Ours method pill (qualitative) picks up the signature green */
+.q-pill.is-ours { color: #5c7d1a; border-color: #cfe3a6; }
+.q-pill.is-ours:hover { border-color: #8DBF2E; }
+.q-pill.is-ours.is-active { background: #8DBF2E; border-color: #8DBF2E; color: #fff; }
+
+/* ---------------- qualitative results viewer ---------------- */
+.qual-stage { max-width: 100%; margin: 0.3rem auto 0; }
+.qual-stage .ba-slider { width: 100%; }
+.qual-stage .ba-base { background: var(--background-secondary); }
+
 /* ---------------- affiliation logos ---------------- */
 .logos-section { padding: 1.5rem 1.5rem 0.5rem; }
 .logo-row {

@@ -25,6 +25,8 @@
   <script defer src="static/js/compare.js"></script>
   <script defer src="static/js/results-data.js"></script>
   <script defer src="static/js/results.js"></script>
+  <script defer src="static/js/qual-data.js"></script>
+  <script defer src="static/js/qual-viewer.js"></script>
 </head>
 <body>
 
@@ -245,6 +247,21 @@
       </p>
       <div id="quant-explorer">
         <noscript><p class="section-lead">Enable JavaScript to explore the interactive results.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUALITATIVE RESULTS ===================== -->
+  <section class="section content-section alt text-left" id="gallery">
+    <div class="container is-max-desktop">
+      <h2 class="section-heading">Qualitative results</h2>
+      <p class="section-lead">
+        Choose a dataset and example, then toggle any method to compare it against the
+        ground truth. Drag the divider to reveal each side. <strong class="hl-green">Ours</strong>
+        removes the <strong class="hl-orange">color shift</strong> that lingers in the blind baselines.
+      </p>
+      <div id="qual-explorer">
+        <noscript><p class="section-lead">Enable JavaScript to explore the qualitative comparisons.</p></noscript>
       </div>
     </div>
   </section>
