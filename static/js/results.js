@@ -126,7 +126,7 @@
     row.innerHTML = '';
     DATASETS.forEach(function (ds) {
       row.appendChild(makePill(ds, ds === state.ds, function () {
-        state.ds = ds; renderRatios(); renderCharts();
+        state.ds = ds; renderDatasets(); renderRatios(); renderCharts();
       }));
     });
   }
