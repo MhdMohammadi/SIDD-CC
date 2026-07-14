@@ -166,6 +166,8 @@ a:hover { color: var(--primary-hover); }
   color: var(--text-secondary);
 }
 .teaser strong { color: var(--text-primary); }
+.teaser .hl-orange { color: #DC4633; }   /* U of T Warm Red (closest to orange on-palette) */
+.teaser .hl-green  { color: #8DBF2E; }   /* U of T light green (Pantone 376) */
 .teaser-2 { margin-top: 1.1rem; }
 
 /* ---------------- affiliation logos ---------------- */
