@@ -169,11 +169,10 @@
 
       <h3 class="subsection-heading">Why: the order of operations</h3>
       <p class="section-lead">
-        In each raw frame, a dark pixel's noise dips <em>below</em> the sensor's black level.
+        In a raw frame, a dark pixel's noise may dip <em>below</em> the sensor's black level.
         SIDD subtracts the black level and <strong>clips</strong> every frame <em>before</em>
         averaging — clipping discards those sub-zero values, so the average is pulled
-        <strong class="hl-orange">upward</strong>. Since the black level differs per color
-        channel, this <strong class="hl-orange">mean shift</strong> shows up as a color cast.
+        <strong class="hl-orange">upward</strong>. This <strong class="hl-orange">mean shift</strong> shows up as a color cast after rendering by ISP.
         Averaging <em>first</em>, then clipping, preserves the true mean.
       </p>
       <div class="pipeline">

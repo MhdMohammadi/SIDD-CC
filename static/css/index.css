@@ -164,6 +164,7 @@ a:hover { color: var(--primary-hover); }
 .teaser {
   font-size: 1.15rem; line-height: 1.75;
   color: var(--text-secondary);
+  text-align: left;
 }
 .teaser strong { color: var(--text-primary); }
 /* semantic highlights, page-wide */
