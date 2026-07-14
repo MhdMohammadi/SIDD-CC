@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   <link rel="stylesheet" href="static/css/index.css" />
+  <script defer src="static/js/compare.js"></script>
 </head>
 <body>
 
@@ -144,21 +145,26 @@
         We diagnose it and release <strong class="hl-green">SIDD-CC</strong>, a corrected version.
       </p>
 
-      <div class="sidd-compare">
-        <div class="sidd-heads"><span>SIDD</span><span class="ours">SIDD-CC (ours)</span></div>
-        <div class="sidd-pair">
-          <img src="assets/sidd/sidd_chess.jpg" alt="SIDD ground truth (chess scene) with a purple tint" />
-          <img src="assets/sidd/siddcc_chess.jpg" alt="SIDD-CC corrected ground truth (chess scene)" />
+      <div class="slider-row">
+        <div class="ba-slider" tabindex="0" role="slider" aria-label="SIDD versus SIDD-CC, chess scene — drag to compare">
+          <img class="ba-base" src="assets/sidd/siddcc_chess.jpg" alt="SIDD-CC corrected ground truth, chess scene" draggable="false" />
+          <div class="ba-before"><img src="assets/sidd/sidd_chess.jpg" alt="SIDD ground truth, chess scene" draggable="false" /></div>
+          <div class="ba-handle" aria-hidden="true"><span class="ba-grip">&#9664;&#9654;</span></div>
+          <span class="ba-label ba-label-l">SIDD</span>
+          <span class="ba-label ba-label-r">SIDD-CC</span>
         </div>
-        <div class="sidd-pair">
-          <img src="assets/sidd/sidd_truck.jpg" alt="SIDD ground truth (toy trucks) with a purple tint" />
-          <img src="assets/sidd/siddcc_truck.jpg" alt="SIDD-CC corrected ground truth (toy trucks)" />
+        <div class="ba-slider" tabindex="0" role="slider" aria-label="SIDD versus SIDD-CC, toy trucks — drag to compare">
+          <img class="ba-base" src="assets/sidd/siddcc_truck.jpg" alt="SIDD-CC corrected ground truth, toy trucks" draggable="false" />
+          <div class="ba-before"><img src="assets/sidd/sidd_truck.jpg" alt="SIDD ground truth, toy trucks" draggable="false" /></div>
+          <div class="ba-handle" aria-hidden="true"><span class="ba-grip">&#9664;&#9654;</span></div>
+          <span class="ba-label ba-label-l">SIDD</span>
+          <span class="ba-label ba-label-r">SIDD-CC</span>
         </div>
-        <p class="fig-caption">
-          Two SIDD scenes: the original ground truth carries a purple/magenta tint (left);
-          SIDD-CC restores the true colors (right).
-        </p>
       </div>
+      <p class="fig-caption">
+        Drag the divider &mdash; the left side is <strong>SIDD</strong> (purple tint), the
+        right side is <strong class="hl-green">SIDD-CC</strong> (corrected). Two SIDD scenes.
+      </p>
 
       <h3 class="subsection-heading">Why: the order of operations</h3>
       <p class="section-lead">

@@ -182,14 +182,38 @@ a:hover { color: var(--primary-hover); }
   font-weight: 700; font-size: 1.25rem; color: var(--text-primary);
   margin: 2.2rem 0 0.8rem; text-align: center;
 }
-/* SIDD-CC comparison grid */
-.sidd-compare { max-width: 840px; margin: 0 auto; }
-.sidd-heads { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.4rem; }
-.sidd-heads span { text-align: center; font-weight: 600; color: var(--text-primary); }
-.sidd-heads .ours { color: #6b9b1e; }
-.sidd-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem; }
-.sidd-pair img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: var(--shadow-md); }
+/* SIDD-CC before/after sliders */
+.slider-row { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.ba-slider {
+  position: relative; --pos: 50%;
+  touch-action: none; user-select: none; -webkit-user-select: none;
+  border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md); cursor: ew-resize;
+}
+.ba-slider:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+.ba-slider img { display: block; width: 100%; height: auto; pointer-events: none; }
+.ba-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-handle {
+  position: absolute; top: 0; bottom: 0; left: var(--pos);
+  width: 2px; background: #fff; transform: translateX(-1px);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.25); pointer-events: none;
+}
+.ba-grip {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  height: 28px; padding: 0 8px; border-radius: 999px;
+  background: #fff; color: var(--primary-color);
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.35); white-space: nowrap;
+}
+.ba-label {
+  position: absolute; top: 10px; padding: 2px 9px; border-radius: 6px;
+  font-size: 0.8rem; font-weight: 600; color: #fff;
+  background: rgba(0,0,0,0.5); pointer-events: none;
+}
+.ba-label-l { left: 10px; }
+.ba-label-r { right: 10px; }
 .fig-caption { text-align: center; font-size: 0.92rem; color: var(--text-light); margin-top: 0.6rem; }
+@media (max-width: 720px) { .slider-row { grid-template-columns: 1fr; } }
 /* order-of-operations pipeline */
 .pipeline { max-width: 940px; margin: 1.2rem auto 0; display: flex; flex-direction: column; gap: 0.9rem; }
 .pipe-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.45rem; }
