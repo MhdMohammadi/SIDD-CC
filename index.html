@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   <link rel="stylesheet" href="static/css/index.css" />
   <script defer src="static/js/compare.js"></script>
+  <script defer src="static/js/quant-data.js"></script>
+  <script defer src="static/js/quant.js"></script>
 </head>
 <body>
 
@@ -225,10 +227,25 @@
           <strong>Denoiser</strong>, cleans the image. <strong>Training</strong> (top): our noise synthesis
           injects a known black-level error &#8496;<sub>bl</sub>, an <em>L1 loss</em> supervises the prediction
           against it, and a second <em>L1 loss</em> supervises the denoised output.
-          <strong>Inference</strong> (bottom): the predictor estimates the error directly from the noisy input
-          &mdash; no reliance on the metadata black level.
+          <strong>Inference</strong> (bottom): the predictor estimates the error directly from the noisy input.
         </figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- ===================== QUANTITATIVE RESULTS ===================== -->
+  <section class="section content-section text-left" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="section-heading">Quantitative results</h2>
+      <p class="section-lead">
+        Pick a dataset and noise ratio to compare <strong>PSNR</strong> and
+        <strong>SSIM</strong> across every method. Among blind methods
+        <strong class="hl-green">Ours</strong> leads, and it stays competitive with
+        calibration-based methods that require extra per-camera measurements.
+      </p>
+      <div id="quant-explorer">
+        <noscript><p class="section-lead">Enable JavaScript to explore the interactive results.</p></noscript>
+      </div>
     </div>
   </section>
 
