@@ -3,12 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Low-Light Cameras Go Color Blind — ICCP 2026</title>
-  <meta name="description" content="Why Low-Light Cameras Go Color Blind: Removing Color Bias in Raw Denoising. ICCP 2026, recommended to Special Issue, PAMI 2026. Project page — coming soon." />
+  <title>SIDD-CC — Why Low-Light Cameras Go Color Blind: Removing Color Bias in Raw Denoising (ICCP 2026)</title>
+  <meta name="description" content="SIDD-CC and black-level-error correction for low-light raw denoising. We remove the color bias in raw denoising and release SIDD-CC, a color-corrected version of the SIDD dataset. ICCP 2026 (recommended to a PAMI Special Issue)." />
+  <meta name="keywords" content="SIDD-CC, SIDD, raw denoising, image denoising, low-light denoising, color bias, color shift, black-level error, denoising dataset, ICCP 2026, computational photography" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Mohammad Mohammadi, Sina Honari, Stavros Tsogkas, Tristan Aumentado-Armstrong, Michael S. Brown, Iqbal Mohomed, Konstantinos G. Derpanis, Alex Levinshtein, Igor Gilitschenski" />
+  <link rel="canonical" href="https://mhdmohammadi.github.io/SIDD-CC/" />
 
-  <meta property="og:title" content="Why Low-Light Cameras Go Color Blind" />
-  <meta property="og:description" content="Removing Color Bias in Raw Denoising — ICCP 2026." />
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="SIDD-CC" />
+  <meta property="og:title" content="SIDD-CC — Why Low-Light Cameras Go Color Blind: Removing Color Bias in Raw Denoising" />
+  <meta property="og:description" content="We remove the color bias in low-light raw denoising and release SIDD-CC, a color-corrected version of the SIDD dataset. ICCP 2026 (recommended to a PAMI Special Issue)." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mhdmohammadi.github.io/SIDD-CC/" />
+  <meta property="og:image" content="https://mhdmohammadi.github.io/SIDD-CC/assets/overview.png" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SIDD-CC — Why Low-Light Cameras Go Color Blind" />
+  <meta name="twitter:description" content="Removing color bias in low-light raw denoising, and SIDD-CC: a color-corrected version of the SIDD dataset. ICCP 2026." />
+  <meta name="twitter:image" content="https://mhdmohammadi.github.io/SIDD-CC/assets/overview.png" />
+  <meta name="twitter:site" content="@MoMohammadi99" />
+
+  <!-- Structured data: dataset + scholarly article (helps Google understand "SIDD-CC") -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "SIDD-CC",
+      "alternateName": "SIDD Color-Corrected",
+      "description": "SIDD-CC is a color-corrected version of the SIDD smartphone image-denoising dataset. It fixes a systematic color shift (purple tint) in the SIDD ground-truth images caused by clipping each frame before averaging.",
+      "url": "https://mhdmohammadi.github.io/SIDD-CC/",
+      "sameAs": "https://arxiv.org/abs/2607.11090",
+      "keywords": ["image denoising", "raw denoising", "low-light", "SIDD", "color correction", "SIDD-CC"],
+      "creator": { "@type": "Person", "name": "Mohammad Mohammadi" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Why Low-Light Cameras Go Color Blind: Removing Color Bias in Raw Denoising",
+      "name": "Why Low-Light Cameras Go Color Blind: Removing Color Bias in Raw Denoising",
+      "url": "https://mhdmohammadi.github.io/SIDD-CC/",
+      "sameAs": "https://arxiv.org/abs/2607.11090",
+      "datePublished": "2026",
+      "inLanguage": "en",
+      "author": [
+        { "@type": "Person", "name": "Mohammad Mohammadi" },
+        { "@type": "Person", "name": "Sina Honari" },
+        { "@type": "Person", "name": "Stavros Tsogkas" },
+        { "@type": "Person", "name": "Tristan Aumentado-Armstrong" },
+        { "@type": "Person", "name": "Michael S. Brown" },
+        { "@type": "Person", "name": "Iqbal Mohomed" },
+        { "@type": "Person", "name": "Konstantinos G. Derpanis" },
+        { "@type": "Person", "name": "Alex Levinshtein" },
+        { "@type": "Person", "name": "Igor Gilitschenski" }
+      ],
+      "publisher": { "@type": "Organization", "name": "IEEE International Conference on Computational Photography (ICCP)" },
+      "about": "Low-light raw image denoising and color-bias correction"
+    }
+  ]
+  </script>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
